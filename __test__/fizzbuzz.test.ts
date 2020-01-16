@@ -1,7 +1,8 @@
 import { fizzbuzz } from '../fizzbuzz';
 
 describe('fizzbuzz', () => {
-  const testFizzBuzz = (n, s: 'FIZZ' | 'BUZZ') => expect(fizzbuzz(n)).toBe(s);
+  const testFizzBuzz = (n, s: 'FIZZ' | 'BUZZ' | 'FIZZBUZZ') =>
+    expect(fizzbuzz(n)).toBe(s);
 
   it('Si n mod 3 = 0 devuelve "FIZZ"', () => {
     const testFizz = n => testFizzBuzz(n, 'FIZZ');
@@ -17,7 +18,13 @@ describe('fizzbuzz', () => {
     testBuzz(10);
     testBuzz(53242340);
   });
-  it.todo('Si n mod 3 = 0 y n mod 5 = 0 "FIZZBUZZ"');
+  it('Si n mod 3 = 0 y n mod 5 = 0 "FIZZBUZZ"', () => {
+    const testBoth = n => testFizzBuzz(n, 'FIZZBUZZ');
+
+    testBoth(15);
+    testBoth(30);
+    testBoth(230 * 3 * 5);
+  });
   it.todo('si n no cumple las anteriores, devuelve n');
 });
 1;
