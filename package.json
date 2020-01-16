@@ -1,0 +1,53 @@
+{
+  "name": "express-typescript-scaffolding",
+  "version": "1.0.0",
+  "description": "Base for Typescript Express application servers",
+  "main": "dist/app.js",
+  "scripts": {
+    "test": "node --trace-uncaught node_modules/.bin/jest --coverage --passWithNoTests",
+    "test:debug": "node --inspect-brk node_modules/.bin/jest --runInBand --testTimeout=300000",
+    "test:watch": "jest --watch",
+    "linter": "eslint \"{src,__{tests,mocks}__}/**/*.ts\" --fix",
+    "build": "tsc",
+    "clean": "rm -rf coverage dist",
+    "prettier": "prettier --write \"{src,__{tests,mocks}__}/**/*.{js,ts}\"",
+    "prestart": "npm run build",
+    "debug": "npm run build; node --inspect-brk dist/app.js",
+    "start": "node dist/app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/roberto-naharro/express-typescript-scaffolding.git"
+  },
+  "keywords": [
+    "node",
+    "express",
+    "typescript"
+  ],
+  "author": "Roberto Naharro",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/roberto-naharro/express-typescript-scaffolding/issues"
+  },
+  "homepage": "https://github.com/roberto-naharro/express-typescript-scaffolding#readme",
+  "devDependencies": {
+    "@types/faker": "^4.1.8",
+    "@types/jest": "^24.0.23",
+    "@types/lodash": "^4.14.149",
+    "@types/node": "^12.12.14",
+    "@typescript-eslint/eslint-plugin": "^2.9.0",
+    "@typescript-eslint/parser": "^2.9.0",
+    "eslint": "^6.7.1",
+    "eslint-config-prettier": "^6.7.0",
+    "faker": "^4.1.0",
+    "husky": "^3.1.0",
+    "jest": "^24.9.0",
+    "prettier": "^1.19.1",
+    "pretty-quick": "^2.0.1",
+    "ts-jest": "^24.2.0",
+    "typescript": "^3.7.2"
+  },
+  "dependencies": {
+    "lodash": "^4.17.15"
+  }
+}
