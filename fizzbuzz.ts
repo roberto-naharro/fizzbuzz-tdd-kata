@@ -14,8 +14,10 @@ const checkDivideBy = (def: { [n: number]: string | number }) => (
     );
 
 export function fizzbuzz(n: number): string | number {
-  return checkDivideBy({
+  const output = checkDivideBy({
     3: 'FIZZ',
     5: 'BUZZ',
   })(n);
+
+  return output ? output : n;
 }
