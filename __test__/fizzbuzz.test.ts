@@ -25,6 +25,11 @@ describe('fizzbuzz', () => {
     testBoth(30);
     testBoth(230 * 3 * 5);
   });
-  it.todo('si n no cumple las anteriores, devuelve n');
+  it('si n no cumple las anteriores, devuelve n', () => {
+    expect(fizzbuzz(1)).toBe(1);
+    expect(fizzbuzz(2)).toBe(2);
+    expect(fizzbuzz(4)).toBe(4);
+    expect(fizzbuzz(7)).toBe(7);
+  });
 });
 1;
